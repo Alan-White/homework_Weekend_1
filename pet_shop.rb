@@ -1,23 +1,29 @@
 def pet_shop_name(title)
-return @pet_shop[:name]
+return title[:name]
 end
 
 def total_cash(money)
-  return @pet_shop[:admin][:total_cash]
+  return money[:admin][:total_cash]
 end
 
-def add_or_remove_cash(receiver, amount)
-  return @pet_shop[:admin][:total_cash] += amount
+def add_or_remove_cash(received, amount)
+  return received[:admin][:total_cash] += amount
 end
 
 def add_or_remove_cash(payout, amount)
-  return @pet_shop[:admin][:total_cash] += amount
+  return payout[:admin][:total_cash] += amount
 end
 
 def pets_sold(sales)
-  return @pet_shop[:admin][:pets_sold]
+  return sales[:admin][:pets_sold]
 end
 
 def increase_pets_sold(pet_shop,sales)
-  return @pet_shop[:admin][:pets_sold] += sales
+  return pet_shop[:admin][:pets_sold] += sales
 end
+
+# def stock_count(amount_of_stock)
+#   stock = 0
+#   for pet in pets
+
+
