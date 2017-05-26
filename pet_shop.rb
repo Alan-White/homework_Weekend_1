@@ -6,7 +6,7 @@ def total_cash(money)
   return @pet_shop[:admin][:total_cash]
 end
 
-# def add_or_remove_cash(deposit, number)
-#   return @pet_shop[:admin][:total_cash] + 10
-# end
+def add_or_remove_cash(receiver, amount)
+  return @pet_shop[:admin][:total_cash] += amount
+end
 
