@@ -46,5 +46,16 @@ def pets_by_breed(pet_shop, dugtype)
     return not_found_pets
 end
 
+def find_pet_by_name(pet_shop, pet_name)
+  for pet in pet_shop[:pets]
+    if pet[:name] == pet_name
+      return pet
+    end
+  end
+end
+
+
+
+
  
 
