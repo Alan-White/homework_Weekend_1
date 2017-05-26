@@ -27,13 +27,13 @@ def stock_count(amount_of_stock)
 end
 
 def pets_by_breed(pet_shop, dugtype)
-  found_pets = []
-  for pet in pet_shop[:pets]
-    if pet[:breed] == dugtype
-     found_pets.push(pet)
+  found_pets = [] # this creates an empty array.
+  for pet in pet_shop[:pets] # this loops through the 6 hashes in the [:pets] array.
+    if pet[:breed] == dugtype # if any of those 6 hashes has a |breed:"British Shorthair"| pair, it will match the pet_name arguement.
+     found_pets.push(pet) # this will push any hashes containing the |breed:"British Shorthair"| pair into the found_pets array.
     end
   end
-  return found_pets
+  return found_pets # this returns the array which contains 2 hashes.
 end
 
 def pets_by_breed(pet_shop, dugtype)
@@ -62,11 +62,15 @@ def find_pet_by_name(pet_shop, pet_name)
 end
 
 def remove_pet_by_name(pet_shop, pet_name)
-  for pet in pet_shop[:pets]
-    if pet[:name] == pet_name
-      pet_shop[:pets].delete(pet)
+  for pet in pet_shop[:pets] #this loops through the 6 hashes in the [:pets] array.
+    if pet[:name] == pet_name #if any of those 6 hashes has a name: "Arthur" pair, it will match the pet_name arguement.
+      pet_shop[:pets].delete(pet) #this finds the [:pets] array and deletes the hash that contains the name: "Arthur" pair.
     end
   end
+end
+
+def add_pet_to_stock(pet_shop, new_pet)
+  pet_shop[:pets].push(new_pet)
 end
 
 
