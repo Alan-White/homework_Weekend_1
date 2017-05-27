@@ -29,7 +29,7 @@ end
 def pets_by_breed(pet_shop, dugtype)
   found_pets = [] # this creates an empty array.
   for pet in pet_shop[:pets] # this loops through the 6 hashes in the [:pets] array.
-    if pet[:breed] == dugtype # if any of those 6 hashes has a |breed:"British Shorthair"| pair, it will match the pet_name arguement.
+    if pet[:breed] == dug_type # if any of those 6 hashes has a |breed:"British Shorthair"| pair, it will match the dug_type arguement.
      found_pets.push(pet) # this will push any hashes containing the |breed:"British Shorthair"| pair into the found_pets array.
     end
   end
@@ -73,7 +73,11 @@ def add_pet_to_stock(pet_shop, new_pet)
   pet_shop[:pets].push(new_pet)
 end
 
-
+def customer_pet_count(pet_count) # @customers is an array containing 2 hashes.
+  for pet in pet_count
+    return pet.count(1)
+  end
+end
 
 
  
