@@ -73,13 +73,13 @@ def add_pet_to_stock(pet_shop, new_pet)
   return pet_shop[:pets].push(new_pet)
 end
 
-def customer_pet_count(pet_count)
-  for pet in pet_count
+def customer_pet_count(customer)
+  for pet in customer
     return pet.count(pet)
   end
 end
 
-# 15
+# 15 - can't get this to run
 # def add_pet_to_customer(customer, new_pet)
 #    return customer[:pets].push(new_pet)
 # end
@@ -87,7 +87,14 @@ end
 
 # # OPTIONAL BELOW.
 
-# def customer_can_afford_pet(customer, new_pet)
+# this function passes the first 2 optional tests.
+def customer_can_afford_pet(customer, new_pet)
+  if customer[:cash] >= 100
+    return true
+  else
+    return false
+  end
+end
 
 
 
