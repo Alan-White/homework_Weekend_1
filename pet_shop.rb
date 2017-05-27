@@ -70,14 +70,25 @@ def remove_pet_by_name(pet_shop, pet_name)
 end
 
 def add_pet_to_stock(pet_shop, new_pet)
-  pet_shop[:pets].push(new_pet)
+  return pet_shop[:pets].push(new_pet)
 end
 
-def customer_pet_count(pet_count) # @customers is an array containing 2 hashes.
+def customer_pet_count(pet_count)
   for pet in pet_count
-    return pet.count(1)
+    return pet.count(pet)
   end
 end
+
+# 15
+# def add_pet_to_customer(customer, new_pet)
+#    return customer[:pets].push(new_pet)
+# end
+
+
+# # OPTIONAL BELOW.
+
+# def customer_can_afford_pet(customer, new_pet)
+
 
 
  
