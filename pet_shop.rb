@@ -81,7 +81,7 @@ end
 
 # this function passes the first 2 optional tests.
 def customer_can_afford_pet(customer, new_pet)
-  if customer[:cash] >= 100
+  if customer[:cash] >= new_pet[:price]
     return true
   else
     return false
@@ -90,6 +90,8 @@ end
 
 
 # def sell_pet_to_customer(pet_shop, pet, customer)
+#   return pet_shop
+#   .push(pet)
 
   
 
