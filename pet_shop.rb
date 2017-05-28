@@ -19,29 +19,30 @@ def increase_pets_sold(pet_shop,sales)
   return pet_shop[:admin][:pets_sold] += sales
 end
 
-def stock_count(amount_of_stock)
-  return amount_of_stock[:pets].count()
+def stock_count(pet_shop)
+  return pet_shop[:pets].count()
 end
 
 # this function passes tests 7 and 8.
 def pets_by_breed(pet_shop, pet_type)
   found_pets = [] # this creates an empty array.
+  # Why can't I move [:breed] from line 31 to line 30????
   for pet in pet_shop[:pets] # this loops through the 6 hashes in the [:pets] array.
-    if pet[:breed] == pet_type # if any of those 6 hashes has a |breed:"British Shorthair"| pair, it will match the dug_type arguement.
+    if pet[:breed] == pet_type # if any of those 6 hashes has a |breed:"British Shorthair"| pair, it will match the pet_type arguement.
      found_pets.push(pet) # this will push any hashes containing the |breed:"British Shorthair"| pair into the found_pets array.
     end
   end
   return found_pets # this returns the array which contains 2 hashes.
 end
+# the function below works on test 10, but not test 11.
+# def find_pet_by_name(pet_shop, pet_name)
+#   for pet in pet_shop[:pets][:name]
+#     return pet if pet == pet_name
+#   end
+#   return nil
+# end
 
-def find_pet_by_name(pet_shop, pet_name)
-  for pet in pet_shop[:pets][:name]
-    return pet if pet == pet_name
-  end
-  return nil
-end
-
-# Why can't I move [:name] from line 47 to line 46 as I did in the function above????? 
+# Why can't I move [:name] from line 48 to line 47 as I did in the function above????? 
 def find_pet_by_name(pet_shop, pet_name)
   for pet in pet_shop[:pets]
     return pet if pet[:name] == pet_name
@@ -53,7 +54,7 @@ end
 def remove_pet_by_name(pet_shop, pet_name)
   for pet in pet_shop[:pets] #this loops through the 6 hashes in the [:pets] array.
     if pet[:name] == pet_name #if any of those 6 hashes has a name: "Arthur" pair, it will match the pet_name arguement.
-      pet_shop[:pets].delete(pet) #this finds the [:pets] array and deletes the hash that contains the name: "Arthur" pair.
+      return pet_shop[:pets].delete(pet) #this finds the [:pets] array and deletes the hash that contains the name: "Arthur" pair.
     end
   end
 end
@@ -90,8 +91,8 @@ end
 
 
 # def sell_pet_to_customer(pet_shop, pet, customer)
-#   return pet_shop
-#   .push(pet)
+
+# end
 
   
 
