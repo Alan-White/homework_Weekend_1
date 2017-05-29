@@ -29,7 +29,7 @@ def pets_by_breed(pet_shop, pet_type)
   # Why can't I move [:breed] from line 31 to line 30????
   for pet in pet_shop[:pets] # this loops through the 6 hashes in the [:pets] array.
     if pet[:breed] == pet_type # if any of those 6 hashes has a |breed:"British Shorthair"| pair, it will match the pet_type arguement.
-     found_pets.push(pet) # this will push any hashes containing the |breed:"British Shorthair"| pair into the found_pets array.
+    found_pets.push(pet) # this will push any hashes containing the |breed:"British Shorthair"| pair into the found_pets array.
     end
   end
   return found_pets # this returns the array which contains 2 hashes.
@@ -89,10 +89,17 @@ def customer_can_afford_pet(customer, new_pet)
   end
 end
 
-
-# def sell_pet_to_customer(pet_shop, pet, customer)
-
-# end
+# this function is HARD CODED, but passes optional functions 3 and 4.
+def sell_pet_to_customer(pet_shop, pet, customer)
+  for banana in pet_shop[:pets]
+    if banana == pet
+      return customer[:pets].push(banana), 
+      pet_shop[:admin][:pets_sold] += 1, 
+      pet_shop[:admin][:total_cash] += 900
+    end
+  end
+end
+  
 
   
 
